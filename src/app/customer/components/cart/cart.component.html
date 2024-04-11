@@ -1,0 +1,31 @@
+
+<div class="container" *ngIf="cartItemDetails.length>0">
+    <mat-card class="cart-card" *ngFor="let cart of cartItemDetails">
+      <mat-card-content>
+        <div class="content">
+          <div class="product-info">
+            <img [src]="cart.processedImg" alt="Product Image" class="product-image">
+            <span class="product-name">{{cart.productName}}</span>
+            <span class="product-price">${{cart.price}}</span>
+          </div>
+          <div class="quantity-controls">
+            <button mat-icon-button class="round-button small-button">
+              <mat-icon>add</mat-icon>
+            </button>
+            <span class="quantity">1</span>
+            <button mat-icon-button class="round-button small-button">
+              <mat-icon>remove</mat-icon>
+            </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <div class="total-amount">
+          Total Amount: ${{cart.price}}
+        </div>
+      </mat-card-actions>
+      <button mat-raised-button color="primary" class="place-order-btn">Place Order</button>
+    </mat-card>
+  </div>
+  
